@@ -1,10 +1,10 @@
 export default {
-    title: "Layout",
-    name: "layout",
+    title: "Link",
+    name: "hyperlinks",
     type: "array",
     of: [
         {
-            type: "string",
+            type: "hyperlink",
         },
     ],
 };

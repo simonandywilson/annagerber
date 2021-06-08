@@ -1,8 +1,8 @@
 import { BiPaperclip } from "react-icons/bi";
 
 export default {
-    title: "Social",
-    name: "social",
+    title: "Link",
+    name: "hyperlink",
     type: "object",
     icon: BiPaperclip,
     fields: [
@@ -20,14 +20,23 @@ export default {
             initialValue: "external",
         },
         {
-            title: "Title",
-            name: "title",
-            type: "string",
-        },
-        {
             title: "Link",
             name: "link",
             type: "string",
         },
     ],
+    preview: {
+        select: {
+            title: "type",
+            subtitle: "link",
+        },
+        prepare(selection) {
+            const { title, subtitle } = selection;
+            const capitalise = (string) => (string && string[0].toUpperCase() + string.slice(1)) || "";
+            return {
+                title: capitalise(title),
+                subtitle: subtitle,
+            };
+        },
+    },
 };

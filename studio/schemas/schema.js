@@ -1,28 +1,15 @@
 import createSchema from "part:@sanity/base/schema-creator"
 import schemaTypes from "all:part:@sanity/base/schema-type"
 
-import seo from "./documents/seo"
-
-import about from "./documents/about"
-import contact from "./objects/about/contact"
-import social from "./objects/about/social";
-
-import content from "./documents/content"
-import thumbnail from "./objects/project/thumbnail"
-import layout from "./objects/project/layout"
-
+import bio from "./documents/bio"
+import short from "./documents/short";
+import long from "./documents/long"
+import seo from "./documents/seo";
+import content from "./objects/content";
+import hyperlinks from "./objects/hyperlinks";
+import hyperlink from "./objects/hyperlink";
 
 export default createSchema({
     name: "mySchema",
-    types: schemaTypes.concat([
-        seo,
-
-        about,
-        contact,
-        social,
-
-        content,
-        thumbnail,
-        layout
-    ]),
+    types: schemaTypes.concat([bio, short, long, seo, content, hyperlinks, hyperlink]),
 });
