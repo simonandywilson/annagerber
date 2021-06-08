@@ -3,6 +3,12 @@ p {
     cursor: default;
 }
 
-.long > p:first-child {
+.long > div > p {
     text-indent: 200px;
+}
+
+.short::before {
+    content: "\A ";
+    display: block;
+    white-space: pre;
 }
