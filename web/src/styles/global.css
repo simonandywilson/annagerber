@@ -13,10 +13,10 @@ Variables
 ----------------------------------------*/
 
 :root {
-    --font-size: 4.5rem;
+    --font-size: 4rem;
     --line-height: 115%;
     --padding: 30px;
-    --purple: #9D4DFF;
+    --purple: #9d4dff;
 }
 
 /*----------------------------------------
@@ -32,6 +32,15 @@ Main
 
 @-ms-viewport {
     width: device-width;
+}
+
+::selection {
+    color: #ffffff;
+    background: var(--purple);
+}
+::-moz-selection {
+    color: #ffffff;
+    background: var(--purple);
 }
 
 html body {

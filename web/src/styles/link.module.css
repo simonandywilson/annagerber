@@ -1,0 +1,17 @@
+.standard, .link {
+    text-decoration: underline;
+    text-decoration-thickness: 3.5px;
+    text-decoration-skip:none;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--purple);
+    cursor: pointer;
+}
+
+.link {
+    color: var(--purple);
+}
+
+.link:hover {
+    font-family: untitled_serif_regular_italic;
+}

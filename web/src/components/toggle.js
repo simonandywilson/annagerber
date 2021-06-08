@@ -3,7 +3,7 @@ import * as style from "../styles/toggle.module.css";
 
 const Toggle = (props) => {
     return (
-        <div onClick={props.toggleVersion}>
+        <div onClick={props.toggleVersion} role="presentation">
             {props.version ? (
                 <div className={style.toggle}>
                     [<span className={style.italic}>Short Version</span>]
