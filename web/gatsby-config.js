@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Anna Gerber",
+    siteUrl: "https://www.annagerber.com"
   },
   plugins: [
     {
@@ -11,6 +12,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-sharp",
+    "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-offline",

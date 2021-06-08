@@ -1,0 +1,10 @@
+.toggle {
+    color: var(--purple);
+    cursor: pointer;
+    width: max-content;
+}
+
+.italic:hover {
+    font-family: untitled_serif_regular_italic;
+    letter-spacing: 0.42px;
+}
