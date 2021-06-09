@@ -10,7 +10,7 @@ export default {
             styles: [],
             lists: [],
             marks: {
-                decorators: [],
+                decorators: [{title: 'Strong', value: 'strong'}],
                 annotations: [
                     {
                         title: "Image",
