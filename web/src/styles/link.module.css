@@ -1,9 +1,9 @@
 .standard, .link {
     text-decoration: underline;
-    text-decoration-thickness: 3.5px;
+    text-decoration-thickness: var(--underline-weight);
     text-decoration-skip:none;
     text-decoration-skip-ink: none;
-    text-underline-offset: 3px;
+    text-underline-offset: var(--underline-offset);
     text-decoration-color: var(--purple);
     cursor: pointer;
 }
