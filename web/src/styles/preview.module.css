@@ -14,10 +14,9 @@
 }
 
 .wrapper {
-    position: relative;
+    position: absolute;
     height: 75%;
     width: 75%;
-    opacity: 0;
 }
 
 .wrapper > div {

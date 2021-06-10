@@ -2,11 +2,11 @@ import React from "react";
 import * as style from "../styles/link.module.css";
 
 const Link = (props) => {
-    const media = props.media && props.media.length ? props.media[0].asset : null;
     const mediaType = props.media && props.media.length ? props.media[0]._type : null;
     const link = props.link && props.link.length ? props.link[0].link : null;
     const linkType = props.link && props.link.length ? props.link[0].type : null;
     const child = props.children;
+    const id = props.media && props.media.length ? props.media[0].asset.assetId : null;
 
     const hyperlink = () => {
         switch (linkType) {
@@ -21,13 +21,10 @@ const Link = (props) => {
                         onMouseEnter={() =>
                             props.setPreview({
                                 active: true,
-                                image: mediaType === "img" ? media.id : null,
-                                video: mediaType === "vid" ? media.url : null,
+                                id: id,
                             })
                         }
-                        onMouseLeave={() =>
-                            props.setPreview({ active: false, image: null, video: null })
-                        }
+                        onMouseLeave={() => props.setPreview({ active: false, id: null })}
                     >
                         {child}
                     </a>
@@ -41,13 +38,10 @@ const Link = (props) => {
                         onMouseEnter={() =>
                             props.setPreview({
                                 active: true,
-                                image: mediaType === "img" ? media.id : null,
-                                video: mediaType === "vid" ? media.url : null,
+                                id: id,
                             })
                         }
-                        onMouseLeave={() =>
-                            props.setPreview({ active: false, image: null, video: null })
-                        }
+                        onMouseLeave={() => props.setPreview({ active: false, id: null })}
                     >
                         {child}
                     </a>
@@ -61,13 +55,10 @@ const Link = (props) => {
                         onMouseEnter={() =>
                             props.setPreview({
                                 active: true,
-                                image: mediaType === "img" ? media.id : null,
-                                video: mediaType === "vid" ? media.url : null,
+                                id: id,
                             })
                         }
-                        onMouseLeave={() =>
-                            props.setPreview({ active: false, image: null, video: null })
-                        }
+                        onMouseLeave={() => props.setPreview({ active: false, id: null })}
                     >
                         {child}
                     </a>
@@ -79,13 +70,10 @@ const Link = (props) => {
                         onMouseEnter={() =>
                             props.setPreview({
                                 active: true,
-                                image: mediaType === "img" ? media.id : null,
-                                video: mediaType === "vid" ? media.url : null,
+                                id: id,
                             })
                         }
-                        onMouseLeave={() =>
-                            props.setPreview({ active: false, image: null, video: null })
-                        }
+                        onMouseLeave={() => props.setPreview({ active: false, id: null })}
                         role="presentation"
                     >
                         {child}

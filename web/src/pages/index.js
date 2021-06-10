@@ -11,13 +11,13 @@ const Home = ({ data }) => {
     const content = data.sanityContent;
     const hasWindow = typeof window !== "undefined";
     const [version, setVersion] = useState(true);
-    const [preview, setPreview] = useState({ active: false, image: null, video: null });
+    const [preview, setPreview] = useState({ active: false, id: null });
     const toggleVersion = () => setVersion((prevVersion) => !prevVersion);
 
     // Hide preview on scroll
     useEffect(() => {
         if (hasWindow) {
-            const changePreview = () => setPreview({ ...preview, active: false });
+            const changePreview = () => setPreview({ active: false, id: null });
             window.addEventListener("scroll", changePreview);
             return () => window.removeEventListener("scroll", changePreview);
         }
@@ -26,7 +26,7 @@ const Home = ({ data }) => {
         <main className={style.container}>
             <Transition version={version} />
             <Preview preview={preview} />
-            <Content name={"bio"} content={content.bio} setPreview={setPreview} />
+            <Content name={"bio"} content={content.bio} setPreview={setPreview}/>
             <Toggle version={version} toggleVersion={toggleVersion} />
             {version && (
                 <Content
