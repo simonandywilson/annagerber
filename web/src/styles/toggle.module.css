@@ -2,15 +2,10 @@
     color: var(--purple);
     cursor: pointer;
     width: max-content;
-    -webkit-user-select: none; 
-  -webkit-touch-callout: none;  
-  -khtml-user-select: none;
-  -ms-user-select: none;   
-  -moz-user-select: none;  
-   user-select: none; 
-}
-
-.italic:hover {
-    font-family: untitled_serif_regular_italic;
-    letter-spacing: 0.42px;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }

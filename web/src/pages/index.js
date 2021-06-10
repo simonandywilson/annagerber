@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import * as style from "../styles/home.module.css";
+import Transition from "../components/transition"
 import Preview from "../components/preview";
 import Content from "../components/content";
 import Toggle from "../components/toggle";
@@ -8,11 +9,25 @@ import Toggle from "../components/toggle";
 // markup
 const Home = ({ data }) => {
     const content = data.sanityContent;
+    const hasWindow = typeof window !== "undefined";
     const [version, setVersion] = useState(true);
+    const [delay, setDelay] = useState(false)
     const [preview, setPreview] = useState({ active: false, image: null, video: null });
     const toggleVersion = () => setVersion((prevVersion) => !prevVersion);
+    useEffect(() => {
+        let countdown = setTimeout(() => setDelay(true), 0);
+        setDelay(false);
+        return () => clearTimeout(countdown);
+    }, [version]);
+
+    useEffect(() => {
+        const changePreview = () => setPreview({...preview, active: false})
+        window.addEventListener("scroll", changePreview);
+        return () => window.removeEventListener("scroll", changePreview);
+    }, [preview]);
     return (
         <main className={style.container}>
+            <Transition version={version}/>
             <Preview preview={preview} />
             <Content name={"bio"} content={content.bio} setPreview={setPreview} />
             <Toggle version={version} toggleVersion={toggleVersion} />

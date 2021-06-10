@@ -17,6 +17,7 @@ const Link = (props) => {
                         target="_blank"
                         rel="noreferrer"
                         className={style.link}
+                        style={{ textDecoration: mediaType ? "underline" : "none" }}
                         onMouseEnter={() =>
                             props.setPreview({
                                 active: true,
@@ -36,6 +37,7 @@ const Link = (props) => {
                     <a
                         href={"mailto:" + link}
                         className={style.link}
+                        style={{ textDecoration: mediaType ? "underline" : "none" }}
                         onMouseEnter={() =>
                             props.setPreview({
                                 active: true,
@@ -55,6 +57,7 @@ const Link = (props) => {
                     <a
                         href={"tel:" + link}
                         className={style.link}
+                        style={{ textDecoration: mediaType ? "underline" : "none" }}
                         onMouseEnter={() =>
                             props.setPreview({
                                 active: true,

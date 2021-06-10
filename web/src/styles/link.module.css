@@ -1,4 +1,4 @@
-.standard, .link {
+.standard {
     text-decoration: underline;
     text-decoration-thickness: var(--underline-weight);
     text-decoration-skip:none;
