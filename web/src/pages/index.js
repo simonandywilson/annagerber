@@ -11,28 +11,39 @@ const Home = ({ data }) => {
     const content = data.sanityContent;
     const hasWindow = typeof window !== "undefined";
     const [version, setVersion] = useState(true);
-    const [delay, setDelay] = useState(false)
     const [preview, setPreview] = useState({ active: false, image: null, video: null });
     const toggleVersion = () => setVersion((prevVersion) => !prevVersion);
-    useEffect(() => {
-        let countdown = setTimeout(() => setDelay(true), 0);
-        setDelay(false);
-        return () => clearTimeout(countdown);
-    }, [version]);
 
+    // Hide preview on scroll
     useEffect(() => {
-        const changePreview = () => setPreview({...preview, active: false})
-        window.addEventListener("scroll", changePreview);
-        return () => window.removeEventListener("scroll", changePreview);
-    }, [preview]);
+        if (hasWindow) {
+            const changePreview = () => setPreview({ ...preview, active: false });
+            window.addEventListener("scroll", changePreview);
+            return () => window.removeEventListener("scroll", changePreview);
+        }
+    }, [preview, hasWindow]);
     return (
         <main className={style.container}>
-            <Transition version={version}/>
+            <Transition version={version} />
             <Preview preview={preview} />
             <Content name={"bio"} content={content.bio} setPreview={setPreview} />
             <Toggle version={version} toggleVersion={toggleVersion} />
-            {version && <Content name={"long"} content={content.long} setPreview={setPreview} />}
-            {!version && <Content name={"short"} content={content.short} setPreview={setPreview} />}
+            {version && (
+                <Content
+                    name={"long"}
+                    content={content.long}
+                    setPreview={setPreview}
+                    version={version}
+                />
+            )}
+            {!version && (
+                <Content
+                    name={"short"}
+                    content={content.short}
+                    setPreview={setPreview}
+                    version={version}
+                />
+            )}
         </main>
     );
 };

@@ -9,7 +9,6 @@ const Preview = (props) => {
     const imageAssetId = props.preview.image;
     const imageData = getGatsbyImageData(imageAssetId, { layout: "FULL_WIDTH" }, sanityConfig);
 
-    
 
     return (
         <div className={style.preview}>

@@ -15,11 +15,11 @@ Media Queries
 
 @media only screen and (min-width: 350px) {
     :root {
-        --font-size: 2.4rem;
+        --font-size: 2.2rem;
         --line-height: 115%;
         --padding: 20px;
         --underline-weight: 3px;
-        --underline-offset:1px;
+        --underline-offset:2px;
         --indent: 75px;
     }
 }
@@ -30,7 +30,7 @@ Media Queries
         --line-height: 115%;
         --padding: 25px;
         --underline-weight: 3px;
-        --underline-offset: 1px;
+        --underline-offset: 2px;
         --indent: 150px;
     }
 }
