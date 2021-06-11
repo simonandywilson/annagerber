@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import * as style from "../styles/home.module.css";
-import Transition from "../components/transition"
 import Preview from "../components/preview";
 import Content from "../components/content";
 import Toggle from "../components/toggle";
@@ -24,7 +23,6 @@ const Home = ({ data }) => {
     }, [preview, hasWindow]);
     return (
         <main className={style.container}>
-            <Transition version={version} />
             <Preview preview={preview} />
             <Content name={"bio"} content={content.bio} setPreview={setPreview}/>
             <Toggle version={version} toggleVersion={toggleVersion} />

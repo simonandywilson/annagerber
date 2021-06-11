@@ -9,9 +9,10 @@
 }
 
 .link {
-    color: var(--purple);
+    color: #000000;
+    font-family: untitled_serif_regular_italic;
 }
 
 .link:hover {
-    font-family: untitled_serif_regular_italic;
+    color: var(--purple);
 }

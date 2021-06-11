@@ -4,23 +4,23 @@ Media Queries
 
 @media only screen and (max-width: 349px) {
     :root {
-        --font-size: 2rem;
-        --line-height: 115%;
+        --font-size: 1.25rem;
+        --line-height: 120%;
         --padding: 15px;
         --underline-weight: 2px;
-        --underline-offset: 2px;
+        --underline-offset: 0px;
         --indent: 50px;
     }
 }
 
 @media only screen and (min-width: 350px) {
     :root {
-        --font-size: 2.2rem;
-        --line-height: 115%;
+        --font-size: 1.55rem;
+        --line-height: 120%;
         --padding: 20px;
-        --underline-weight: 3px;
-        --underline-offset:2px;
-        --indent: 75px;
+        --underline-weight: 2px;
+        --underline-offset:1px;
+        --indent: 60px;
     }
 }
 
