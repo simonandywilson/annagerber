@@ -8,6 +8,8 @@
     -ms-user-select: none;
     -moz-user-select: none;
     user-select: none;
+    opacity: 0;
+    animation: var(--fade-animation);
 }
 
 .italic:hover {

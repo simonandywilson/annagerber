@@ -12,7 +12,12 @@ const Content = (props) => {
                 const { hyperlinks } = mark;
 
                 return (
-                    <Link media={media} link={hyperlinks} setPreview={props.setPreview}>
+                    <Link
+                        media={media}
+                        link={hyperlinks}
+                        setPreviewId={props.setPreviewId}
+                        setPreviewActive={props.setPreviewActive}
+                    >
                         {children}
                     </Link>
                 );
@@ -21,7 +26,9 @@ const Content = (props) => {
     };
 
     return (
-        <section className={style[props.name]}>
+        <section
+            className={style[props.name]}
+        >
             <PortableText blocks={props.content} serializers={serializers} />
         </section>
     );

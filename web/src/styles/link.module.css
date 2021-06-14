@@ -1,14 +1,36 @@
+/* .standard {
+    position: relative;
+    cursor: pointer;
+    z-index: 0;
+}
+
+.standard::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    right: 0;
+    bottom: var(--underline-offset);
+    width: 100%;
+    height: var(--underline-weight);
+    background: var(--purple);
+    z-index: -1;
+} */
+
 .standard {
     text-decoration: underline;
     text-decoration-thickness: var(--underline-weight);
-    text-decoration-skip:none;
+    text-decoration-skip: none;
     text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    -webkit-text-decoration-skip-ink: none;
     text-underline-offset: var(--underline-offset);
     text-decoration-color: var(--purple);
     cursor: pointer;
 }
 
 .link {
+    position: relative;
     color: #000000;
     font-family: untitled_serif_regular_italic;
 }

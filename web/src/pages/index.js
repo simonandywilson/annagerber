@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import * as style from "../styles/home.module.css";
+import Transition from "../components/transition";
 import Preview from "../components/preview";
 import Content from "../components/content";
 import Toggle from "../components/toggle";
@@ -10,27 +11,37 @@ const Home = ({ data }) => {
     const content = data.sanityContent;
     const hasWindow = typeof window !== "undefined";
     const [version, setVersion] = useState(true);
-    const [preview, setPreview] = useState({ active: false, id: null });
+    const [previewId, setPreviewId] = useState(null);
+    const [previewActive, setPreviewActive] = useState(false);
     const toggleVersion = () => setVersion((prevVersion) => !prevVersion);
 
     // Hide preview on scroll
     useEffect(() => {
         if (hasWindow) {
-            const changePreview = () => setPreview({ active: false, id: null });
+            const changePreview = () => {
+                setPreviewId(null); setPreviewActive(false);
+            };
             window.addEventListener("scroll", changePreview);
             return () => window.removeEventListener("scroll", changePreview);
         }
-    }, [preview, hasWindow]);
+    }, [previewActive, previewId, hasWindow]);
     return (
         <main className={style.container}>
-            <Preview preview={preview} />
-            <Content name={"bio"} content={content.bio} setPreview={setPreview}/>
+            <Transition version={version} />
+            <Preview previewId={previewId} previewActive={previewActive} />
+            <Content
+                name={"bio"}
+                content={content.bio}
+                setPreviewId={setPreviewId}
+                setPreviewActive={setPreviewActive}
+            />
             <Toggle version={version} toggleVersion={toggleVersion} />
             {version && (
                 <Content
                     name={"long"}
                     content={content.long}
-                    setPreview={setPreview}
+                    setPreviewId={setPreviewId}
+                    setPreviewActive={setPreviewActive}
                     version={version}
                 />
             )}
@@ -38,7 +49,8 @@ const Home = ({ data }) => {
                 <Content
                     name={"short"}
                     content={content.short}
-                    setPreview={setPreview}
+                    setPreviewId={setPreviewId}
+                    setPreviewActive={setPreviewActive}
                     version={version}
                 />
             )}

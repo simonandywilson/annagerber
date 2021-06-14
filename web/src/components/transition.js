@@ -11,7 +11,7 @@ const Transition = (props) => {
 
     useEffect(() => {
         setTransition(true);
-        let countdown = setTimeout(() => setTransition(false), 300);
+        let countdown = setTimeout(() => setTransition(false), 500);
         return () => clearTimeout(countdown);
     }, [props.version]);
 

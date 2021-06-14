@@ -2,6 +2,8 @@
 .short,
 .long {
     overflow: hidden;
+    opacity: 0;
+    animation: var(--fade-animation);
 }
 
 p {
