@@ -41,7 +41,7 @@ Media Queries
         --line-height: 120%;
         --padding: 20px;
         --underline-weight: 2px;
-        --underline-offset: 4px;
+        --underline-offset: 2px;
         --indent: 80px;
     }
 }
@@ -52,7 +52,7 @@ Media Queries
         --line-height: 115%;
         --padding: 25px;
         --underline-weight: 3px;
-        --underline-offset: 3px;
+        --underline-offset: 2px;
         --indent: 150px;
     }
 }
@@ -63,7 +63,7 @@ Media Queries
         --line-height: 115%;
         --padding: 30px;
         --underline-weight: 4px;
-        --underline-offset: 3px;
+        --underline-offset: 2px;
         --indent: 200px;
     }
 }
@@ -74,7 +74,7 @@ Variables
 
 :root {
     --purple: #9d4dff;
-    --fade-animation: fade 0s 0.5s linear forwards;
+    --fade-animation: fade 0s 0.3s linear forwards;
 }
 
 @keyframes fade {
