@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import * as style from "../styles/home.module.css";
+import Seo from "../components/seo";
 import Transition from "../components/transition";
 import Preview from "../components/preview";
 import Content from "../components/content";
@@ -26,6 +27,8 @@ const Home = ({ data }) => {
         }
     }, [previewActive, previewId, hasWindow]);
     return (
+        <>
+        <Seo/>
         <main className={style.container}>
             <Transition version={version} />
             <Preview previewId={previewId} previewActive={previewActive} />
@@ -55,6 +58,7 @@ const Home = ({ data }) => {
                 />
             )}
         </main>
+        </>
     );
 };
 
