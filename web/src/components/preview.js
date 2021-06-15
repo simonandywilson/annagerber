@@ -5,19 +5,16 @@ import * as style from "../styles/preview.module.css";
 
 const Preview = (props) => {
     const { content } = useStaticQuery(getData);
-
     const mediaType = (content, isMedia) => {
         if (isMedia) {
+            const matches = content.media[0].asset.assetId === props.previewId ? true : false;
             if (content.media[0]._type === "img") {
                 return (
                     <div
                         key={content._key}
                         className={style.wrapper}
                         style={{
-                            display:
-                                content.media[0].asset.assetId === props.previewId
-                                    ? "block"
-                                    : "none",
+                            display: matches ? "block" : "none",
                         }}
                     >
                         <img src={content.media[0].asset.url} alt="" />
@@ -29,10 +26,7 @@ const Preview = (props) => {
                         key={content._key}
                         className={style.wrapper}
                         style={{
-                            display:
-                                content.media[0].asset.assetId === props.previewId
-                                    ? "block"
-                                    : "none",
+                            display: matches ? "block" : "none",
                         }}
                     >
                         <ReactPlayer
@@ -44,9 +38,7 @@ const Preview = (props) => {
                             muted={true}
                             controls={false}
                             loop={true}
-                            playing={
-                                content.media[0].asset.assetId === props.previewId ? true : false
-                            }
+                            playing={matches}
                         />
                     </div>
                 );
