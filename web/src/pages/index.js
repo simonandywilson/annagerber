@@ -28,37 +28,51 @@ const Home = ({ data }) => {
     }, [previewActive, previewId, hasWindow]);
     return (
         <>
-        <Seo/>
-        <main className={style.container}>
-            <Transition version={version} />
-            <Preview previewId={previewId} previewActive={previewActive} />
-            <Content
-                name={"bio"}
-                content={content.bio}
-                setPreviewId={setPreviewId}
-                setPreviewActive={setPreviewActive}
-                previewActive={previewActive}
-            />
-            <Toggle version={version} toggleVersion={toggleVersion} />
-            {version && (
+            <Seo />
+            <main
+                className={style.container}
+                onClick={(e) => {
+                    if (e.target.tagName !== "SPAN") {
+                        setPreviewId(null);
+                        setPreviewActive(false);
+                    }
+                }}
+                role="presentation"
+            >
+                <Transition version={version} />
+                <Preview previewId={previewId} previewActive={previewActive} />
                 <Content
-                    name={"long"}
-                    content={content.long}
+                    name={"bio"}
+                    content={content.bio}
                     setPreviewId={setPreviewId}
+                    previewId={previewId}
                     setPreviewActive={setPreviewActive}
-                    version={version}
+                    previewActive={previewActive}
                 />
-            )}
-            {!version && (
-                <Content
-                    name={"short"}
-                    content={content.short}
-                    setPreviewId={setPreviewId}
-                    setPreviewActive={setPreviewActive}
-                    version={version}
-                />
-            )}
-        </main>
+                <Toggle version={version} toggleVersion={toggleVersion} />
+                {version && (
+                    <Content
+                        name={"long"}
+                        content={content.long}
+                        setPreviewId={setPreviewId}
+                        previewId={previewId}
+                        setPreviewActive={setPreviewActive}
+                        previewActive={previewActive}
+                        version={version}
+                    />
+                )}
+                {!version && (
+                    <Content
+                        name={"short"}
+                        content={content.short}
+                        setPreviewId={setPreviewId}
+                        previewId={previewId}
+                        setPreviewActive={setPreviewActive}
+                        previewActive={previewActive}
+                        version={version}
+                    />
+                )}
+            </main>
         </>
     );
 };

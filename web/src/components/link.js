@@ -18,15 +18,23 @@ const Link = (props) => {
     };
 
     const mouseLeave = (e) => {
-        e.preventDefault();
-        props.setPreviewId(null);
-        props.setPreviewActive(false);
+        if (!isMobile) {
+            e.preventDefault();
+            props.setPreviewId(null);
+            props.setPreviewActive(false);
+        }
     };
 
     const click = (e) => {
         if (isMobile) {
             e.preventDefault();
-            props.setPreviewId(id);
+            if (props.previewId === id) {
+                props.setPreviewId(null);
+                props.setPreviewActive(false);
+            } else {
+                props.setPreviewId(id);
+                props.setPreviewActive(true);
+            }
         }
     };
 

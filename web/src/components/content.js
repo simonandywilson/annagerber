@@ -16,6 +16,7 @@ const Content = (props) => {
                         media={media}
                         link={hyperlinks}
                         setPreviewId={props.setPreviewId}
+                        previewId={props.previewId}
                         setPreviewActive={props.setPreviewActive}
                         previewActive={props.previewActive}
                     >

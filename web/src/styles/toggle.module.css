@@ -1,3 +1,7 @@
+.toggleContainer {
+    width: max-content;
+}
+
 .toggle {
     color: var(--purple);
     cursor: pointer;

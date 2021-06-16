@@ -26,6 +26,8 @@
     -webkit-text-decoration-skip-ink: none;
     text-underline-offset: var(--underline-offset);
     text-decoration-color: var(--purple);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
     cursor: pointer;
 }
 
