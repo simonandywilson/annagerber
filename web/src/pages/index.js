@@ -37,6 +37,7 @@ const Home = ({ data }) => {
                 content={content.bio}
                 setPreviewId={setPreviewId}
                 setPreviewActive={setPreviewActive}
+                previewActive={previewActive}
             />
             <Toggle version={version} toggleVersion={toggleVersion} />
             {version && (
