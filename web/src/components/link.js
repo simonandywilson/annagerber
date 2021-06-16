@@ -18,11 +18,13 @@ const Link = (props) => {
                         rel="noreferrer"
                         className={style.link}
                         style={{ textDecoration: mediaType ? "underline" : "none" }}
-                        onMouseEnter={() => {
+                        onMouseEnter={(e) => {
+                            e.preventDefault();
                             props.setPreviewId(id);
                             props.setPreviewActive(true);
                         }}
-                        onMouseLeave={() => {
+                        onMouseLeave={(e) => {
+                            e.preventDefault();
                             props.setPreviewId(null);
                             props.setPreviewActive(false);
                         }}
@@ -36,11 +38,13 @@ const Link = (props) => {
                         href={"mailto:" + link}
                         className={style.link}
                         style={{ textDecoration: mediaType ? "underline" : "none" }}
-                        onMouseEnter={() => {
+                        onMouseEnter={(e) => {
+                            e.preventDefault();
                             props.setPreviewId(id);
                             props.setPreviewActive(true);
                         }}
-                        onMouseLeave={() => {
+                        onMouseLeave={(e) => {
+                            e.preventDefault();
                             props.setPreviewId(null);
                             props.setPreviewActive(false);
                         }}
@@ -54,11 +58,13 @@ const Link = (props) => {
                         href={"tel:" + link}
                         className={style.link}
                         style={{ textDecoration: mediaType ? "underline" : "none" }}
-                        onMouseEnter={() => {
+                        onMouseEnter={(e) => {
+                            e.preventDefault();
                             props.setPreviewId(id);
                             props.setPreviewActive(true);
                         }}
-                        onMouseLeave={() => {
+                        onMouseLeave={(e) => {
+                            e.preventDefault();
                             props.setPreviewId(null);
                             props.setPreviewActive(false);
                         }}
@@ -70,11 +76,13 @@ const Link = (props) => {
                 return (
                     <span
                         className={style.standard}
-                        onMouseEnter={() => {
+                        onMouseEnter={(e) => {
+                            e.preventDefault();
                             props.setPreviewId(id);
                             props.setPreviewActive(true);
                         }}
-                        onMouseLeave={() => {
+                        onMouseLeave={(e) => {
+                            e.preventDefault();
                             props.setPreviewId(null);
                             props.setPreviewActive(false);
                         }}
