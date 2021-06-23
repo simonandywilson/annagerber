@@ -27,7 +27,6 @@ const Link = (props) => {
 
     const click = (e) => {
         if (isMobile) {
-            e.preventDefault();
             if (props.previewId === id) {
                 props.setPreviewId(null);
                 props.setPreviewActive(false);
