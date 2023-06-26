@@ -2,7 +2,6 @@ export default {
     title: "SEO",
     name: "seo",
     type: "document",
-    __experimental_actions: [/*'create',*/ "update", /*'delete',*/ "publish"],
     fields: [
         {
             // Site Title
@@ -25,6 +24,7 @@ export default {
                     `Your site description should be a maximum of 155 characters.`
                 ),
             ],
+            rows: 3
         },
         {
             title: "Social Banner",

@@ -1,19 +1,20 @@
-import S from "@sanity/desk-tool/structure-builder";
-import { BiFile } from "react-icons/bi";
-import { BiGlobe } from "react-icons/bi";
+import Emoji from "a11y-react-emoji";
+import React from "react";
 
-export default () =>
-    S.list()
-        .title("Content")
+export const structure = (S) => {
+    return S.list()
+        .id('root')
+        .title('Content')
         .items([
             S.listItem()
                 .title("Content")
-                .icon(BiFile)
+                .icon(() => <Emoji style={{ fontSize: "2rem" }} symbol={"⭐️"} />)
                 .child(S.document().title("Content").schemaType("content").documentId("content")),
             S.divider(),
             S.listItem()
                 .title("SEO")
-                .icon(BiGlobe)
+                .icon(() => <Emoji style={{ fontSize: "2rem" }} symbol={"🌍"} />)
                 .child(S.document().title("SEO").schemaType("seo").documentId("seo")),
             S.divider(),
         ]);
+}

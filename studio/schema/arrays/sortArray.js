@@ -1,3 +1,5 @@
+import { LimitedArray } from "../../components/LimitedArray";
+
 export default {
     title: "Sort",
     name: "sort",
@@ -13,4 +15,7 @@ export default {
         },
         { title: "Video", name: "vid", type: "vid" },
     ],
+    components: {
+        input: LimitedArray
+    }
 };

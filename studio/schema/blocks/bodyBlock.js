@@ -10,15 +10,18 @@ export default {
             styles: [],
             lists: [],
             marks: {
-                decorators: [{title: 'Strong', value: 'strong'}],
+                decorators: [{ title: 'Strong', value: 'strong' }],
                 annotations: [
                     {
-                        title: "Image",
+                        title: "Link",
                         name: "link",
                         type: "object",
                         icon: BiLink,
                         options: {
-                            editModal: "modal",
+                            modal: {
+                                type: 'dialog',
+                                width: 1
+                            }
                         },
                         fields: [
                             {
@@ -26,6 +29,7 @@ export default {
                                 name: "media",
                                 type: "sort",
                                 validation: (Rule) => Rule.max(1),
+                                
                             },
                             {
                                 title: "Link",
