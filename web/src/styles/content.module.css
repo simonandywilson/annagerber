@@ -11,6 +11,14 @@ p {
     cursor: default;
 }
 
+.bio > div > p {
+   margin-top: 1em;
+}
+
+.bio > div > p:first-child {
+   margin-top: 0;
+}
+
 .long > div > p {
     text-indent: var(--indent);
 }

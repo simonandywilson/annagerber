@@ -14,6 +14,7 @@
     user-select: none;
     opacity: 0;
     animation: var(--fade-animation);
+    margin-top: 1em;
 }
 
 .italic:hover {
