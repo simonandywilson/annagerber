@@ -48,19 +48,19 @@ const Preview = (props) => {
 
     return (
         <div className={style.preview}>
-            {content.bio.map((content) => {
+            {content?.bio && content.bio.map((content) => {
                 return content.markDefs.map((item) => {
                     const isMedia = item.media && item.media.length ? true : false;
                     return mediaType(item, isMedia);
                 });
             })}
-            {content.short.map((content) => {
+            {content?.short && content.short.map((content) => {
                 return content.markDefs.map((item) => {
                     const isMedia = item.media && item.media.length ? true : false;
                     return mediaType(item, isMedia);
                 });
             })}
-            {content.long.map((content) => {
+            {content?.long && content.long.map((content) => {
                 return content.markDefs.map((item) => {
                     const isMedia = item.media && item.media.length ? true : false;
                     return mediaType(item, isMedia);
