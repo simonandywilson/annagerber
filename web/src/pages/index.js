@@ -11,7 +11,7 @@ import Toggle from "../components/toggle";
 const Home = ({ data }) => {
     const content = data.sanityContent;
     const hasWindow = typeof window !== "undefined";
-    const [version, setVersion] = useState(true);
+    const [version, setVersion] = useState(false);
     const [previewId, setPreviewId] = useState(null);
     const [previewActive, setPreviewActive] = useState(false);
     const toggleVersion = () => setVersion((prevVersion) => !prevVersion);
@@ -49,7 +49,7 @@ const Home = ({ data }) => {
                     setPreviewActive={setPreviewActive}
                     previewActive={previewActive}
                 />
-                <Toggle version={version} toggleVersion={toggleVersion} />
+                {/* <Toggle version={version} toggleVersion={toggleVersion} /> */}
                 {version && (
                     <Content
                         name={"long"}
